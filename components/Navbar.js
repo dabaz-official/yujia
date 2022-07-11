@@ -15,12 +15,14 @@ import Image from 'next/image'
 
 const functions = [
   {
+    id: 1,
     name: '租房',
     description: '寻找优质房源。',
     href: '/rent',
     icon: HomeIcon,
   },
   {
+    id: 2,
     name: '发布房源',
     description: '成为房东。',
     href: '#',
@@ -29,12 +31,14 @@ const functions = [
 ]
 const resources = [
   {
+    id: 1,
     name: '了解予家',
     description: '阅览常见问题以了解予家。',
     href: '/faqs',
     icon: QuestionMarkCircleIcon,
   },
   {
+    id: 2,
     name: '关爱模式',
     description: '即将上线。',
     href: '#',
@@ -113,7 +117,7 @@ export default function Navbar() {
                           {resources.map((item) => (
                             <Link href={item.href}>
                               <a
-                                key={item.name}
+                                key={item.id}
                                 className="-m-3 p-3 flex items-start rounded-lg hover:bg-slate-50"
                               >
                                 <item.icon className="flex-shrink-0 h-6 w-6 text-blue-600" aria-hidden="true" />
@@ -179,7 +183,7 @@ export default function Navbar() {
                   {functions.map((item) => (
                     <Link href={item.href}>
                       <a
-                        key={item.name}
+                        key={item.id}
                         href={item.href}
                         className="-m-3 p-3 flex items-center rounded-md hover:bg-slate-50"
                       >
@@ -196,7 +200,7 @@ export default function Navbar() {
                 {resources.map((item) => (
                   <Link href={item.href}>
                     <a
-                      key={item.name}
+                      key={item.id}
                       href={item.href}
                       className="text-base font-medium text-slate-900 hover:text-slate-700"
                     >
